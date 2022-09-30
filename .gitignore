@@ -1,3 +1,8 @@
 .terraform*
 terraform.tfstate
 terraform.tfstate.backup
+
+aws
+aws-iam-authenticator
+awscliv2.zip
+kubectl
