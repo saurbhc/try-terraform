@@ -138,23 +138,3 @@ resource "aws_security_group" "my_vpc_security_group_http_https_ssh" {
     Name = "MyVPC-SecurityGroup-http-https-ssh"
   }
 }
-
-# ---
-
-# resource "aws_network_interface" "my_vpc_network_interface_public" {
-#   subnet_id       = aws_subnet.my_vpc_public_subnet.id
-#   security_groups = [aws_security_group.my_vpc_security_group_http_https_ssh.id]
-
-#   tags = {
-#     Name = "MyVPC-NetworkInterface-Public"
-#   }
-# }
-
-# resource "aws_network_interface" "my_vpc_network_interface_private" {
-#   subnet_id       = aws_subnet.my_vpc_private_subnet.id
-#   security_groups = [aws_security_group.my_vpc_security_group_http_https_ssh.id]
-
-#   tags = {
-#     Name = "MyVPC-NetworkInterface-Private"
-#   }
-# }

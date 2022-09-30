@@ -15,8 +15,8 @@ data "aws_ami" "ububtu" {
 }
 
 resource "aws_instance" "web" {
-  # ami           = data.aws_ami.ububtu.id
-  ami           = "ami-096800910c1b781ba"
+  # ami           = "ami-096800910c1b781ba"
+  ami           = data.aws_ami.ububtu.id
   instance_type = "t2.micro"
 
   user_data_replace_on_change = true
@@ -26,10 +26,6 @@ resource "aws_instance" "web" {
   key_name                    = aws_key_pair.saurabh_public_key.key_name
   vpc_security_group_ids      = [aws_security_group.my_vpc_security_group_http_https_ssh.id]
   subnet_id                   = aws_subnet.my_vpc_public_subnet.id
-  # network_interface {
-  #   network_interface_id = aws_network_interface.my_vpc_network_interface_public.id
-  #   device_index         = 0
-  # }
 
   tags = {
     Name = "Instance-Web-InPublicSubnet"
@@ -40,13 +36,13 @@ resource "aws_instance" "web" {
 # - Name and tags DONE
 # - AMI DONE
 # - Instance Type DONE
-# - Key Pair
+# - Key Pair DONE
 # - Network Settings
-#   - VPC
-#   - Subnet
-#   - Auto-assign public IP - Enable
-#   - Firewall (security groups) - Create with rules
-#   - Configure storage
+#   - VPC DONE
+#   - Subnet DONE
+#   - Auto-assign public IP - Enable DONE
+#   - Firewall (security groups) - Create with rules DONE
+#   - Configure storage 
 # - Advance
 #   - Request Spot?
-#   - User data
+#   - User data DONE
